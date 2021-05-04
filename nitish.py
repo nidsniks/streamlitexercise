@@ -36,7 +36,7 @@ st.header('Nitish Gapminder')
 
 
 
-checkbox = st.sidebar.checkbox(" show country")
+checkbox = st.sidebar.checkbox("show country")
 #print(checkbox)
 
 if checkbox:
@@ -52,5 +52,5 @@ df2= df1[mask2]
 st.dataframe(data=df2)
 
 #create seaborn
-chart = alt.Chart(df2).mark_circle().encode(x='gni_per_capita', y='life_expectancy', size='population', tooltip=['gni_per_capita', 'life_expectancy', 'population'])
+chart = alt.Chart(df2).mark_circle().encode(x='gni_per_capita', y='life_expectancy', size='population', color='max(gni_per_capita):Q')
 st.altair_chart(chart, use_container_width=True)
